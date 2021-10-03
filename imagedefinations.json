@@ -1,0 +1,51 @@
+{
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "containerDefinitions": [
+    {
+      "name": "securitycontainer",
+      "image": "401227757136.dkr.ecr.ap-south-1.amazonaws.com/insurance-security:latest",
+      "memory": "1024",
+      "memoryReservation": "512",
+      "resourceRequirements": null,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": "8080",
+          "protocol": "tcp"
+        }
+      ],
+      "environment": null,
+      "environmentFiles": [],
+      "secrets": null,
+      "mountPoints": null,
+      "volumesFrom": null,
+      "hostname": null,
+      "user": null,
+      "workingDirectory": null,
+      "extraHosts": null,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/security",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "ulimits": null,
+      "dockerLabels": null,
+      "dependsOn": null,
+      "repositoryCredentials": {
+        "credentialsParameter": ""
+      }
+    }
+  ],
+  "volumes": [],
+  "networkMode": "awsvpc",
+  "memory": "1024",
+  "cpu": "512",
+  "executionRoleArn": "arn:aws:iam::401227757136:role/ecsTaskExecutionRole",
+  "family": "security",
+  "tags": []
+}

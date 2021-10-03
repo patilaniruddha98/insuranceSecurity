@@ -32,4 +32,5 @@ phases:
 artifacts:
   files:
     - target/security.jar
+    - imagedefinitions.json
   discard-paths: yes
