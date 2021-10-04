@@ -11,11 +11,11 @@ import javax.transaction.Transactional
 
 
 @Service
-class UserDetailsServiceImpl : UserDetailsService {
+open class UserDetailsServiceImpl : UserDetailsService {
     @Autowired
     var userRepository: UserRepository? = null
 
-    @Transactional
+    @org.springframework.transaction.annotation.Transactional
     @Throws(UsernameNotFoundException::class)
     override fun loadUserByUsername(username: String): UserDetails {
         val user: User? = userRepository!!.findByUsername(username)

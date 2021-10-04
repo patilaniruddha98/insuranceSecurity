@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class SecurityApplication
+open class SecurityApplication
 
 fun main(args: Array<String>) {
 	runApplication<SecurityApplication>(*args)
